@@ -1,0 +1,1027 @@
+/* =========================================================
+   GLOBAL SETTINGS
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f1f5f9;
+
+    color: #1e293b;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   COMMON ELEMENTS
+========================================================= */
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+input,
+select {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.12);
+}
+
+label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+    font-size: 14px;
+}
+
+button {
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s,
+        transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
+#loginPage {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d4ed8 0%,
+            #4338ca 50%,
+            #7c3aed 100%
+        );
+}
+
+
+/* Login Header */
+
+#loginPage header {
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+#loginPage header h1 {
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+#loginPage header p {
+    font-size: 15px;
+
+    opacity: 0.9;
+}
+
+
+/* Login Form */
+
+#loginPage main {
+    width: 100%;
+
+    max-width: 410px;
+}
+
+#loginForm {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.25);
+}
+
+#loginForm > div {
+    margin-bottom: 18px;
+}
+
+
+/* Login Button */
+
+#loginForm button {
+    width: 100%;
+
+    background: #2563eb;
+
+    color: white;
+
+    margin-top: 5px;
+}
+
+#loginForm button:hover {
+    background: #1d4ed8;
+}
+
+
+/* Login Error */
+
+#loginMessage {
+    min-height: 20px;
+
+    margin-top: 15px;
+
+    color: #dc2626;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MAIN APPLICATION
+========================================================= */
+
+#mainApplication {
+    min-height: 100vh;
+
+    background: #f1f5f9;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+#mainApplication > header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: #1e3a8a;
+
+    color: white;
+
+    padding: 15px 25px;
+
+    box-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+/* Navigation Title */
+
+#mainApplication > header > div h1 {
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Navigation Menu */
+
+nav {
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+}
+
+nav button {
+    background: rgba(255,255,255,0.12);
+
+    color: white;
+
+    border: 1px solid
+        rgba(255,255,255,0.2);
+
+    padding: 9px 14px;
+
+    font-size: 13px;
+}
+
+nav button:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+
+/* Logout */
+
+#logoutButton {
+    margin-left: auto;
+
+    background: #dc2626;
+
+    border-color: #dc2626;
+}
+
+#logoutButton:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+#mainApplication > main {
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: auto;
+
+    padding: 30px;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+section > h2 {
+    color: #1e3a8a;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+article > h3 {
+    color: #334155;
+
+    margin-bottom: 18px;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+#dashboardSection > h2 {
+    margin-bottom: 25px;
+}
+
+
+/* Dashboard Cards */
+
+#dashboardCards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+#dashboardCards article {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 10px;
+
+    border-left:
+        5px solid #2563eb;
+
+    box-shadow:
+        0 3px 15px
+        rgba(15, 23, 42, 0.07);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+#dashboardCards article:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 20px
+        rgba(15, 23, 42, 0.12);
+}
+
+
+#dashboardCards h3 {
+    font-size: 14px;
+
+    color: #64748b;
+
+    margin-bottom: 8px;
+}
+
+
+#dashboardCards p {
+    font-size: 32px;
+
+    font-weight: 700;
+
+    color: #2563eb;
+}
+
+
+/* Dashboard Information */
+
+#dashboardSection > section {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 15px
+        rgba(15, 23, 42, 0.07);
+}
+
+#dashboardSection > section h3 {
+    margin-bottom: 10px;
+
+    color: #1e3a8a;
+}
+
+
+/* =========================================================
+   GENERAL ARTICLE / CARD
+========================================================= */
+
+article {
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 3px 15px
+        rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+form {
+    width: 100%;
+}
+
+
+form > div {
+    margin-bottom: 17px;
+}
+
+
+/* Form with multiple fields */
+
+#teacherForm,
+#subjectForm,
+#roomForm,
+#assignmentForm {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+/* Make submit button occupy one cell */
+
+#teacherForm button,
+#subjectForm button,
+#roomForm button,
+#assignmentForm button {
+    background: #2563eb;
+
+    color: white;
+
+    align-self: end;
+
+    height: 43px;
+}
+
+#teacherForm button:hover,
+#subjectForm button:hover,
+#roomForm button:hover,
+#assignmentForm button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 10px;
+
+    background: white;
+}
+
+
+/* Table Header */
+
+thead th {
+    background: #1e3a8a;
+
+    color: white;
+
+    padding: 13px 10px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+/* Table Body */
+
+tbody td {
+    border: 1px solid #e2e8f0;
+
+    padding: 11px 9px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #334155;
+}
+
+
+/* Alternating rows */
+
+tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+
+tbody tr:hover {
+    background: #eff6ff;
+}
+
+
+/* =========================================================
+   TABLE ACTION BUTTONS
+========================================================= */
+
+tbody button {
+    padding: 7px 11px;
+
+    font-size: 12px;
+
+    margin: 2px;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.delete-button {
+    background: #fee2e2;
+
+    color: #b91c1c;
+}
+
+.delete-button:hover {
+    background: #fecaca;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.edit-button {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+.edit-button:hover {
+    background: #bfdbfe;
+}
+
+
+/* =========================================================
+   SUCCESS BUTTON
+========================================================= */
+
+#generateButton,
+#downloadButton {
+    background: #16a34a;
+
+    color: white;
+
+    margin-right: 8px;
+}
+
+#generateButton:hover,
+#downloadButton:hover {
+    background: #15803d;
+}
+
+
+/* =========================================================
+   PRINT BUTTON
+========================================================= */
+
+#printButton {
+    background: #64748b;
+
+    color: white;
+}
+
+#printButton:hover {
+    background: #475569;
+}
+
+
+/* =========================================================
+   BREAK SCHEDULE
+========================================================= */
+
+#timetableSection article ul {
+    list-style: none;
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+#timetableSection article ul li {
+    padding: 12px 16px;
+
+    border-radius: 7px;
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+#timetableSection article ul li:first-child {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+#timetableSection article ul li:last-child {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+/* =========================================================
+   TIMETABLE
+========================================================= */
+
+#timetableSection article {
+    overflow-x: auto;
+}
+
+
+/* Timetable heading */
+
+#firstYearTimetable h3,
+#secondYearTimetable h3,
+#thirdYearTimetable h3,
+#fourthYearTimetable h3 {
+    color: #1e3a8a;
+
+    margin-bottom: 15px;
+}
+
+
+/* Timetable table */
+
+#firstYearTimetable table,
+#secondYearTimetable table,
+#thirdYearTimetable table,
+#fourthYearTimetable table {
+    min-width: 1000px;
+}
+
+
+/* Timetable header */
+
+#firstYearTimetable th,
+#secondYearTimetable th,
+#thirdYearTimetable th,
+#fourthYearTimetable th {
+    background: #1e3a8a;
+
+    color: white;
+
+    padding: 12px;
+
+    border: 1px solid #cbd5e1;
+
+    text-align: center;
+}
+
+
+/* Timetable cells */
+
+#firstYearTimetable td,
+#secondYearTimetable td,
+#thirdYearTimetable td,
+#fourthYearTimetable td {
+    min-width: 135px;
+
+    min-height: 75px;
+
+    height: 75px;
+
+    border: 1px solid #cbd5e1;
+
+    text-align: center;
+
+    vertical-align: middle;
+
+    padding: 8px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SUBJECT CELL
+========================================================= */
+
+.subject-cell {
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 7px;
+
+    padding: 8px;
+
+    color: #334155;
+}
+
+.subject-cell strong {
+    color: #1d4ed8;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SHORT BREAK
+========================================================= */
+
+.short-break,
+.break-cell {
+    background: #fef3c7 !important;
+
+    color: #92400e !important;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   LUNCH BREAK
+========================================================= */
+
+.lunch-break,
+.lunch-cell {
+    background: #dcfce7 !important;
+
+    color: #166534 !important;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FREE PERIOD
+========================================================= */
+
+.free-period {
+    background: #f8fafc;
+
+    color: #94a3b8;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   CONFLICT MESSAGE
+========================================================= */
+
+#conflictMessage {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 7px;
+
+    color: #991b1b;
+
+    background: #fee2e2;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   GENERATION MESSAGE
+========================================================= */
+
+#generationMessage {
+    margin-top: 15px;
+
+    padding: 13px;
+
+    border-radius: 7px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #0f172a;
+
+    color: #cbd5e1;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 30px;
+}
+
+footer p:first-child {
+    color: white;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+footer p:last-child {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   HIDDEN ELEMENTS
+========================================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+
+/* Large Tablets */
+
+@media (max-width: 1200px) {
+
+    #dashboardCards {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    #teacherForm,
+    #subjectForm,
+    #roomForm,
+    #assignmentForm {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* Tablets */
+
+@media (max-width: 850px) {
+
+    #mainApplication > main {
+        padding: 20px;
+    }
+
+    #mainApplication > header {
+        padding: 15px;
+    }
+
+    #mainApplication > header > div h1 {
+        font-size: 19px;
+    }
+
+    #dashboardCards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    #teacherForm,
+    #subjectForm,
+    #roomForm,
+    #assignmentForm {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    #teacherForm button,
+    #subjectForm button,
+    #roomForm button,
+    #assignmentForm button {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    #loginPage {
+        padding: 15px;
+    }
+
+    #loginPage header h1 {
+        font-size: 23px;
+    }
+
+    #loginForm {
+        padding: 25px 20px;
+    }
+
+    #mainApplication > main {
+        padding: 15px;
+    }
+
+    #mainApplication > header > div h1 {
+        font-size: 17px;
+    }
+
+    nav {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        width: 100%;
+    }
+
+    nav button {
+        width: 100%;
+    }
+
+    #logoutButton {
+        margin-left: 0;
+    }
+
+    #dashboardCards {
+        grid-template-columns: 1fr;
+    }
+
+    article {
+        padding: 18px;
+    }
+
+    section > h2 {
+        font-size: 21px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    #timetableSection article {
+        padding: 15px;
+    }
+
+}
+#resetButton {
+    background: #f97316;
+
+    color: white;
+}
+
+#resetButton:hover {
+    background: #ea580c;
+}
+
+
+.meditation-cell { background:#ede9fe !important; color:#6d28d9 !important; font-weight:700; }
+.practical-cell { background:#ecfeff; border:1px solid #a5f3fc; border-radius:7px; padding:10px; color:#155e75; font-weight:600; }
+#timetableSection td[rowspan="2"] { vertical-align:middle; }

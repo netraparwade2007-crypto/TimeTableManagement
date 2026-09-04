@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        University Automatic Timetable System
+    </title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <!--
+        CSS will be added later.
+        For now, this file contains HTML only.
+    -->
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     LOGIN PAGE
+===================================================== -->
+
+<section id="loginPage">
+
+    <header>
+
+        <h1>
+            🎓 University Automatic Timetable System
+        </h1>
+
+        <p>
+            Teacher / Administrator Login
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <form id="loginForm">
+
+            <div>
+
+                <label for="username">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="username"
+                    name="username"
+                    placeholder="Enter email"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Login
+            </button>
+
+
+            <p id="loginMessage">
+            </p>
+
+        </form>
+
+    </main>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN APPLICATION
+===================================================== -->
+
+<section id="mainApplication"
+         hidden>
+
+
+    <!-- =================================================
+         NAVIGATION BAR
+    ================================================== -->
+
+    <header>
+
+        <div>
+
+            <h1>
+                🎓 University Timetable System
+            </h1>
+
+        </div>
+
+
+        <nav>
+
+            <button type="button"
+                    id="dashboardButton">
+
+                Dashboard
+
+            </button>
+
+
+            <button type="button"
+                    id="teachersButton">
+
+                Teachers
+
+            </button>
+
+
+            <button type="button"
+                    id="subjectsButton">
+
+                Subjects
+
+            </button>
+
+
+            <button type="button"
+                    id="roomsButton">
+
+                Classrooms & Labs
+
+            </button>
+
+
+            <button type="button"
+                    id="timetableButton">
+
+                Timetable
+
+            </button>
+            
+            <button type="button" 
+                id="resetButton">
+                Reset System
+            </button>
+
+
+            <button type="button"
+                    id="logoutButton">
+
+                Logout
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main>
+
+
+        <!-- =============================================
+             DASHBOARD
+        ============================================== -->
+
+        <section id="dashboardSection">
+
+            <h2>
+                University Dashboard
+            </h2>
+
+
+            <div id="dashboardCards">
+
+
+                <article>
+
+                    <h3>
+                        Teachers
+                    </h3>
+
+                    <p id="teacherCount">
+                        0
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Subjects
+                    </h3>
+
+                    <p id="subjectCount">
+                        0
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Classrooms
+                    </h3>
+
+                    <p id="classroomCount">
+                        0
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Laboratories
+                    </h3>
+
+                    <p id="laboratoryCount">
+                        0
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>
+                        Timetable Entries
+                    </h3>
+
+                    <p id="timetableCount">
+                        0
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+            <section>
+
+                <h3>
+                    System Information
+                </h3>
+
+                <p>
+                    Use the menu above to manage teachers,
+                    subjects, classrooms, laboratories and
+                    university timetables.
+                </p>
+
+            </section>
+
+        </section>
+
+
+        <!-- =============================================
+             TEACHER MANAGEMENT
+        ============================================== -->
+
+        <section id="teacherSection"
+                 hidden>
+
+            <h2>
+                👨‍🏫 Teacher Management
+            </h2>
+
+
+            <!-- ADD TEACHER -->
+
+            <article>
+
+                <h3>
+                    Add Teacher
+                </h3>
+
+
+                <form id="teacherForm">
+
+
+                    <div>
+
+                        <label for="teacherId">
+                            Teacher ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="teacherId"
+                            name="teacherId"
+                            placeholder="Example: T001"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="teacherName">
+                            Teacher Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="teacherName"
+                            name="teacherName"
+                            placeholder="Example: Dr. Amit Sharma"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="teacherEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="teacherEmail"
+                            name="teacherEmail"
+                            placeholder="teacher@university.edu"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="teacherDepartment">
+                            Department
+                        </label>
+
+                        <input
+                            type="text"
+                            id="teacherDepartment"
+                            name="teacherDepartment"
+                            placeholder="Example: Computer Science"
+                        >
+
+                    </div>
+
+
+                    <button type="submit">
+                        Add Teacher
+                    </button>
+
+
+                </form>
+
+            </article>
+
+
+            <!-- TEACHER TABLE -->
+
+            <article>
+
+                <h3>
+                    Registered Teachers
+                </h3>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Teacher ID
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Email
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="teacherTableBody">
+
+                        <!-- Teachers will be inserted here -->
+
+                    </tbody>
+
+                </table>
+
+            </article>
+
+        </section>
+
+
+        <!-- =============================================
+             SUBJECT MANAGEMENT
+        ============================================== -->
+
+        <section id="subjectSection"
+                 hidden>
+
+            <h2>
+                📚 Subject Management
+            </h2>
+
+
+            <article>
+
+                <h3>
+                    Add Subject
+                </h3>
+
+
+                <form id="subjectForm">
+
+
+                    <div>
+
+                        <label for="subjectName">
+                            Subject Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subjectName"
+                            name="subjectName"
+                            placeholder="Example: Data Structures"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="subjectYear">
+                            Academic Year
+                        </label>
+
+                        <select
+                            id="subjectYear"
+                            name="subjectYear"
+                            required
+                        >
+
+                            <option value="">
+                                Select Year
+                            </option>
+
+                            <option value="1">
+                                First Year
+                            </option>
+
+                            <option value="2">
+                                Second Year
+                            </option>
+
+                            <option value="3">
+                                Third Year
+                            </option>
+
+                            <option value="4">
+                                Fourth Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="subjectSemester">
+                            Semester
+                        </label>
+
+                        <select
+                            id="subjectSemester"
+                            name="subjectSemester"
+                            required
+                        >
+
+                            <option value="">
+                                Select Semester
+                            </option>
+
+                            <option value="1">
+                                Semester 1
+                            </option>
+
+                            <option value="2">
+                                Semester 2
+                            </option>
+
+                            <option value="3">
+                                Semester 3
+                            </option>
+
+                            <option value="4">
+                                Semester 4
+                            </option>
+
+                            <option value="5">
+                                Semester 5
+                            </option>
+
+                            <option value="6">
+                                Semester 6
+                            </option>
+
+                            <option value="7">
+                                Semester 7
+                            </option>
+
+                            <option value="8">
+                                Semester 8
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="subjectType">
+                            Subject Type
+                        </label>
+
+                        <select
+                            id="subjectType"
+                            name="subjectType"
+                            required
+                        >
+
+                            <option value="">
+                                Select Type
+                            </option>
+
+                            <option value="Theory">
+                                Theory
+                            </option>
+
+                            <option value="Laboratory">
+                                Laboratory
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="subjectTeacher">
+                            Teacher
+                        </label>
+
+                        <select
+                            id="subjectTeacher"
+                            name="subjectTeacher"
+                            required
+                        >
+
+                            <option value="">
+                                Select Teacher
+                            </option>
+
+                            <!-- Teachers will be inserted here -->
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="weeklyClasses">
+                            Classes Per Week
+                        </label>
+
+                        <input
+                            type="number"
+                            id="weeklyClasses"
+                            name="weeklyClasses"
+                            min="1"
+                            max="10"
+                            value="3"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button type="submit">
+                        Add Subject
+                    </button>
+
+
+                </form>
+
+            </article>
+
+
+            <!-- SUBJECT TABLE -->
+
+            <article>
+
+                <h3>
+                    Registered Subjects
+                </h3>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Year
+                            </th>
+
+                            <th>
+                                Semester
+                            </th>
+
+                            <th>
+                                Type
+                            </th>
+
+                            <th>
+                                Teacher
+                            </th>
+
+                            <th>
+                                Weekly Classes
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="subjectTableBody">
+
+                        <!-- Subjects will be inserted here -->
+
+                    </tbody>
+
+                </table>
+
+            </article>
+
+        </section>
+
+
+        <!-- =============================================
+             CLASSROOM / LAB MANAGEMENT
+        ============================================== -->
+
+        <section id="roomSection"
+                 hidden>
+
+            <h2>
+                🏫 Classroom & Laboratory Management
+            </h2>
+
+
+            <article>
+
+                <h3>
+                    Add Classroom / Laboratory
+                </h3>
+
+
+                <form id="roomForm">
+
+
+                    <div>
+
+                        <label for="roomNumber">
+                            Room Number / Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="roomNumber"
+                            name="roomNumber"
+                            placeholder="Example: Room 101"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="roomType">
+                            Room Type
+                        </label>
+
+                        <select
+                            id="roomType"
+                            name="roomType"
+                            required
+                        >
+
+                            <option value="">
+                                Select Type
+                            </option>
+
+                            <option value="Classroom">
+                                Classroom
+                            </option>
+
+                            <option value="Laboratory">
+                                Laboratory
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="roomCapacity">
+                            Capacity
+                        </label>
+
+                        <input
+                            type="number"
+                            id="roomCapacity"
+                            name="roomCapacity"
+                            min="1"
+                            placeholder="Example: 60"
+                            required
+                        >
+
+                    </div>
+                    <div>
+                        <label for="roomSubject">
+                            Subject
+                        </label>
+
+                        <select
+                             id="roomSubject"
+                             name="roomSubject"
+                             required
+                        >
+                            <option value="">
+                                 Select Subject
+                            </option>
+                        </select>
+                    </div>
+
+
+
+                    <button type="submit">
+                        Add Room
+                    </button>
+
+
+                </form>
+
+            </article>
+
+
+            <!-- ROOM TABLE -->
+
+            <article>
+
+                <h3>
+                    Registered Classrooms & Laboratories
+                </h3>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Room
+                            </th>
+
+                            <th>
+                                Type
+                            </th>
+
+                            <th>
+                                Capacity
+                            </th>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="roomTableBody">
+
+                        <!-- Rooms will be inserted here -->
+
+                    </tbody>
+
+                </table>
+
+            </article>
+
+        </section>
+
+
+        <!-- =============================================
+             MANUAL CLASS ASSIGNMENT
+        ============================================== -->
+
+        <section id="assignmentSection"
+                 hidden>
+
+            <h2>
+                📝 Manual Class Assignment
+            </h2>
+
+
+            <article>
+
+                <h3>
+                    Assign Subject
+                </h3>
+
+
+                <form id="assignmentForm">
+
+
+                    <div>
+
+                        <label for="assignmentYear">
+                            Academic Year
+                        </label>
+
+                        <select
+                            id="assignmentYear"
+                            required
+                        >
+
+                            <option value="">
+                                Select Year
+                            </option>
+
+                            <option value="1">
+                                First Year
+                            </option>
+
+                            <option value="2">
+                                Second Year
+                            </option>
+
+                            <option value="3">
+                                Third Year
+                            </option>
+
+                            <option value="4">
+                                Fourth Year
+                            </option>
+
+                        </select>
+
+                    </div>
+                    <div>
+
+                        <label for="assignmentSemester">
+                            Semester
+                        </label>
+
+                        <select
+                            id="assignmentSemester"
+                            required
+    >
+
+                            <option value="">
+                                Select Semester
+                            </option>
+
+                            <option value="1">
+                                Semester 1
+                            </option>
+
+                            <option value="2">
+                                Semester 2
+                            </option>
+
+                            <option value="3">
+                                Semester 3
+                            </option>
+
+                            <option value="4">
+                                Semester 4
+                            </option>
+
+                            <option value="5">
+                                Semester 5
+                            </option>
+
+                            <option value="6">
+                                Semester 6
+                            </option>
+
+                            <option value="7">
+                                Semester 7
+                            </option>
+
+                            <option value="8">
+                                Semester 8
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label for="assignmentDay">
+                            Day
+                        </label>
+
+                        <select
+                            id="assignmentDay"
+                            required
+                        >
+
+                            <option value="">
+                                Select Day
+                            </option>
+
+                            <option value="Monday">
+                                Monday
+                            </option>
+
+                            <option value="Tuesday">
+                                Tuesday
+                            </option>
+
+                            <option value="Wednesday">
+                                Wednesday
+                            </option>
+
+                            <option value="Thursday">
+                                Thursday
+                            </option>
+
+                            <option value="Friday">
+                                Friday
+                            </option>
+
+                            <option value="Saturday">
+                                Saturday
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="assignmentTime">
+                            Time
+                        </label>
+
+                        <select
+                            id="assignmentTime"
+                            required
+                        >
+
+                            <option value="">
+                                Select Time
+                            </option>
+
+                            <option value="">Select a subject first</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="assignmentSubject">
+                            Subject
+                        </label>
+
+                        <select
+                            id="assignmentSubject"
+                            required
+                        >
+
+                            <option value="">
+                                Select Subject
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="assignmentTeacher">
+                            Teacher
+                        </label>
+
+                        <select
+                            id="assignmentTeacher"
+                            required
+                        >
+
+                            <option value="">
+                                Select Teacher
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="assignmentRoom">
+                            Classroom / Laboratory
+                        </label>
+
+                        <select
+                            id="assignmentRoom"
+                            required
+                        >
+
+                            <option value="">
+                                Select Room
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button type="submit">
+                        Assign Class
+                    </button>
+
+
+                    <p id="conflictMessage">
+                    </p>
+
+
+                </form>
+
+            </article>
+
+        </section>
+
+
+        <!-- =============================================
+             AUTOMATIC TIMETABLE
+        ============================================== -->
+
+        <section id="timetableSection"
+                 hidden>
+
+            <h2>
+                📅 Automatic Timetable Generator
+            </h2>
+
+
+            <article>
+
+                <h3>
+                    Generate Timetable
+                </h3>
+
+
+                <p>
+                    The system will automatically generate a
+                    timetable while checking teacher,
+                    classroom, laboratory and student-year
+                    conflicts.
+                </p>
+
+
+                <br>
+
+
+                <div>
+
+                    <label for="timetableYear">
+                        Select Academic Year
+                    </label>
+
+                    <select id="timetableYear">
+
+                        <option value="1">
+                            First Year
+                        </option>
+
+                        <option value="2">
+                            Second Year
+                        </option>
+
+                        <option value="3">
+                            Third Year
+                        </option>
+
+                        <option value="4">
+                            Fourth Year
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <br>
+
+
+                <button
+                    type="button"
+                    id="generateButton">
+
+                    ⚙ Generate Automatic Timetable
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="downloadButton">
+
+                    ⬇ Download Timetable
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="printButton">
+
+                    🖨 Print / Save PDF
+
+                </button>
+
+
+            </article>
+
+
+            <!-- =========================================
+                 BREAK INFORMATION
+            ========================================== -->
+
+            <article>
+
+                <h3>
+                    Break Schedule
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        ☕ Short Break:
+                        11:15 AM - 11:30 AM
+                    </li>
+
+                    <li>
+                        🍴 Lunch Break:
+                        01:30 PM - 02:15 PM
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+            <!-- =========================================
+                 FIRST YEAR
+            ========================================== -->
+
+            <article id="firstYearTimetable">
+
+                <h3>
+                    First Year Timetable
+                </h3>
+
+
+                <div>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Time
+                                </th>
+
+                                <th>
+                                    Monday
+                                </th>
+
+                                <th>
+                                    Tuesday
+                                </th>
+
+                                <th>
+                                    Wednesday
+                                </th>
+
+                                <th>
+                                    Thursday
+                                </th>
+
+                                <th>
+                                    Friday
+                                </th>
+
+                                <th>
+                                    Saturday
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="firstYearTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 SECOND YEAR
+            ========================================== -->
+
+            <article id="secondYearTimetable">
+
+                <h3>
+                    Second Year Timetable
+                </h3>
+
+
+                <div>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Time
+                                </th>
+
+                                <th>
+                                    Monday
+                                </th>
+
+                                <th>
+                                    Tuesday
+                                </th>
+
+                                <th>
+                                    Wednesday
+                                </th>
+
+                                <th>
+                                    Thursday
+                                </th>
+
+                                <th>
+                                    Friday
+                                </th>
+
+                                <th>
+                                    Saturday
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="secondYearTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 THIRD YEAR
+            ========================================== -->
+
+            <article id="thirdYearTimetable">
+
+                <h3>
+                    Third Year Timetable
+                </h3>
+
+
+                <div>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Time
+                                </th>
+
+                                <th>
+                                    Monday
+                                </th>
+
+                                <th>
+                                    Tuesday
+                                </th>
+
+                                <th>
+                                    Wednesday
+                                </th>
+
+                                <th>
+                                    Thursday
+                                </th>
+
+                                <th>
+                                    Friday
+                                </th>
+
+                                <th>
+                                    Saturday
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="thirdYearTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================================
+                 FOURTH YEAR
+            ========================================== -->
+
+            <article id="fourthYearTimetable">
+
+                <h3>
+                    Fourth Year Timetable
+                </h3>
+
+
+                <div>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Time
+                                </th>
+
+                                <th>
+                                    Monday
+                                </th>
+
+                                <th>
+                                    Tuesday
+                                </th>
+
+                                <th>
+                                    Wednesday
+                                </th>
+
+                                <th>
+                                    Thursday
+                                </th>
+
+                                <th>
+                                    Friday
+                                </th>
+
+                                <th>
+                                    Saturday
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="fourthYearTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        <p>
+            University Automatic Timetable Management System
+        </p>
+
+        <p>
+            Academic Timetable Administration
+        </p>
+
+    </footer>
+
+
+</section>
+
+
+<!--
+===========================================================
+IMPORTANT
+
+JavaScript will be added in the next step.
+
+Do NOT add JavaScript yet.
+
+The HTML above creates:
+
+1. Login page
+2. Dashboard
+3. Teacher management
+4. Subject management
+5. Teacher dropdown
+6. Classroom management
+7. Laboratory management
+8. Manual assignment
+9. First Year timetable
+10. Second Year timetable
+11. Third Year timetable
+12. Fourth Year timetable
+13. Short break
+14. Lunch break
+15. Automatic timetable button
+16. Download button
+17. Print/PDF button
+===========================================================
+-->
+<script type="module" src="script.js"></script>
+
+
+</body>
+
+</html>
